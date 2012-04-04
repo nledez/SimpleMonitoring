@@ -1,0 +1,4 @@
+config/database.rb
+.rvmrc
+log/
+tmp/
