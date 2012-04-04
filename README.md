@@ -31,4 +31,4 @@ Connect to DB and launch there SQL commands:
 
 Yepee ! It's working :)
 
-Now you can connect to http://<your-url>/status
+Now you can connect to `http://<your-url>/status`
