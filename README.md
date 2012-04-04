@@ -17,12 +17,12 @@ Connect to DB and launch there SQL commands:
 insert into status(data) values(NOW());
 select * from status;
 
-mysql> select * from status;
+`mysql> select * from status;
 +------+---------------------+
 | id   | data                |
 +------+---------------------+
 | NULL | 2012-04-04 07:37:25 |
 +------+---------------------+
-1 row in set (0.00 sec)
+1 row in set (0.00 sec)`
 
 Yepee ! It's working :)
