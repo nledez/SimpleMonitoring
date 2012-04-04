@@ -1,3 +1,0 @@
-CREATE TABLE status (id INT, data VARCHAR(30));
-insert into status(data) values(NOW());
-select * from status;
