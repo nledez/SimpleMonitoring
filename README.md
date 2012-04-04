@@ -3,6 +3,7 @@ Install
 
 Config
 ------
+
 	cp config/database.rb.sample config/database.rb
 
 edit config/database.rb to replace right values
@@ -16,8 +17,10 @@ Connect to DB and create table:
 Test
 ====
 Connect to DB and launch there SQL commands:
-	insert into status(data) values(NOW());
-
+	
+	mysql> insert into status(data) values(NOW());
+	Query OK, 1 row affected (0.00 sec)
+	
 	mysql> select * from status;
 	+------+---------------------+
 	| id   | data                |
