@@ -30,3 +30,5 @@ Connect to DB and launch there SQL commands:
 	1 row in set (0.00 sec)
 
 Yepee ! It's working :)
+
+Now you can connect to http://<your-url>/status
