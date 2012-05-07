@@ -10,12 +10,12 @@ class RbStatus < Sinatra::Base
       DB['insert into status(data) values(NOW());'].first
       after = DB['select id, data from status;'].all.count.to_s
       if after > before
-        "OK"
+        "#{VHOST_NAME} OK"
       else
-        "KO"
+        "#{VHOST_NAME} KO"
       end
     rescue
-      "KO"
+      "#{VHOST_NAME} KO"
     end
   end
 end
