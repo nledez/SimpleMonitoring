@@ -1,2 +1,3 @@
 DB_URL = 'mysql2://user:pass@host/db'
 VHOST_NAME="change me"
+#ORIGIN_ALLOWED = '*'
