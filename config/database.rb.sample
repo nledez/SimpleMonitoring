@@ -1,4 +1,4 @@
 DB_URL = 'mysql2://user:pass@host/db'
 VHOST_NAME="change me"
 #ORIGIN_ALLOWED = '*'
-CLUSTER_ID=0
+NODE_ID=0
