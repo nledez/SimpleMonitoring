@@ -20,9 +20,10 @@ class RbStatus < Sinatra::Base
       # end
       if after > 0
         "#{VHOST_NAME} OK #{after}"
-        "#{VHOST_NAME} OK with #{counter} retry"
+        # "#{VHOST_NAME} OK with #{counter} retry"
       else
-        "#{VHOST_NAME} KO with #{counter} retry"
+        "#{VHOST_NAME} KO with #{after} retry"
+        # "#{VHOST_NAME} KO with #{counter} retry"
       end
     rescue
       "#{VHOST_NAME} KO"
