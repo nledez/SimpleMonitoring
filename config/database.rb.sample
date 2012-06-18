@@ -2,4 +2,5 @@ DB_URL = 'mysql2://user:pass@host/db'
 VHOST_NAME="change me"
 #ORIGIN_ALLOWED = '*'
 #SLEEP_TIME=1
+#RETRY=10
 NODE_ID=0
