@@ -4,7 +4,7 @@ class RbStatus < Sinatra::Base
   DB = ::Sequel.connect(DB_URL)
 
   get '/status' do
-    begin
+    # begin
       response['Access-Control-Allow-Origin'] = ORIGIN_ALLOWED if defined? ORIGIN_ALLOWED
       NODE_ID = 0 unless defined? NODE_ID
       RETRY = 10  unless defined? RETRY
@@ -22,11 +22,11 @@ class RbStatus < Sinatra::Base
         "#{VHOST_NAME} OK #{after}"
         # "#{VHOST_NAME} OK with #{counter} retry"
       else
-        "#{VHOST_NAME} KO with #{after}"
+        "#{VHOST_NAME} KO #{after}"
         # "#{VHOST_NAME} KO with #{counter} retry"
       end
-    rescue
-      "#{VHOST_NAME} KO"
-    end
+    # rescue
+      # "#{VHOST_NAME} KO"
+    # end
   end
 end
