@@ -14,10 +14,11 @@ class RbStatus < Sinatra::Base
       before = status.filter(:node => NODE_ID).all.count.to_s
       status.insert(:data => Time.now, :node => NODE_ID)
       after = status.filter(:node => NODE_ID).all.count.to_s
-      while counter <= RETRY && after < before
+      while counter <= RETRY || after < before
         counter += 1
         sleep SLEEP_TIME if defined? SLEEP_TIME
         after = status.filter(:node => NODE_ID).all.count.to_s
+      end
       if after > before
         "#{VHOST_NAME} OK"
       else
