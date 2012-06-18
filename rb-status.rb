@@ -13,7 +13,7 @@ class RbStatus < Sinatra::Base
       status.filter(:node => NODE_ID).delete
       status.insert(:data => Time.now, :node => NODE_ID)
       sleep SLEEP_TIME if defined? SLEEP_TIME
-      after = status.filter(:node => NODE_ID).all.count.to_s
+      after = status.filter(:node => NODE_ID).all.count
       # while counter <= RETRY && after <= 0
       #   counter += 1
       #   after = status.filter(:node => NODE_ID).all.count.to_s
