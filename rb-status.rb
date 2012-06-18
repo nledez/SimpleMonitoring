@@ -7,7 +7,7 @@ class RbStatus < Sinatra::Base
     begin
       response['Access-Control-Allow-Origin'] = ORIGIN_ALLOWED if defined? ORIGIN_ALLOWED
       NODE_ID = 0 unless defined? NODE_ID
-      RETRY = 10 unless defined? RETRY
+      RETRY = 10  unless defined? RETRY
       counter = after = 0
       status = DB[:status]
       status.filter(:node => NODE_ID).delete
@@ -19,9 +19,11 @@ class RbStatus < Sinatra::Base
       #   after = status.filter(:node => NODE_ID).all.count.to_s
       # end
       if after <= 0
-        "#{VHOST_NAME} OK with #{counter} retry"
+        "#{VHOST_NAME} OK"
+        # "#{VHOST_NAME} OK with #{counter} retry"
       else
-        "#{VHOST_NAME} KO with #{counter} retry"
+        "#{VHOST_NAME} KO"
+        # "#{VHOST_NAME} KO with #{counter} retry"
       end
     rescue
       "#{VHOST_NAME} KO"
