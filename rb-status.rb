@@ -19,11 +19,9 @@ class RbStatus < Sinatra::Base
       #   after = status.filter(:node => NODE_ID).all.count.to_s
       # end
       if after > 0
-        "#{VHOST_NAME} OK #{after}"
-        # "#{VHOST_NAME} OK with #{counter} retry"
+        "#{VHOST_NAME} OK with #{counter} retry and #{after} records"
       else
-        "#{VHOST_NAME} KO #{after}"
-        # "#{VHOST_NAME} KO with #{counter} retry"
+        "#{VHOST_NAME} KO with #{counter} retry and #{after} records"
       end
     # rescue
       # "#{VHOST_NAME} KO"
