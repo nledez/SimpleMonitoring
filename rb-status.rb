@@ -8,7 +8,7 @@ class RbStatus < Sinatra::Base
       response['Access-Control-Allow-Origin'] = ORIGIN_ALLOWED if defined? ORIGIN_ALLOWED
       NODE_ID = 0 unless defined? NODE_ID
       RETRY = 10 unless defined? RETRY
-      counter = 0
+      counter = after = 0
       status = DB[:status]
       status.filter(:node => NODE_ID).delete
       status.insert(:data => Time.now, :node => NODE_ID)
