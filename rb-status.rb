@@ -18,13 +18,12 @@ class RbStatus < Sinatra::Base
       #   sleep SLEEP_TIME if defined? SLEEP_TIME
       #   after = status.filter(:node => NODE_ID).all.count.to_s
       # end
-      # if after <= 0
+      if after >= 0
         "#{VHOST_NAME} OK #{after}"
-        # "#{VHOST_NAME} OK with #{counter} retry"
-      # else
-        # "#{VHOST_NAME} KO"
-        # "#{VHOST_NAME} KO with #{counter} retry"
-      # end
+        "#{VHOST_NAME} OK with #{counter} retry"
+      else
+        "#{VHOST_NAME} KO with #{counter} retry"
+      end
     rescue
       "#{VHOST_NAME} KO"
     end
