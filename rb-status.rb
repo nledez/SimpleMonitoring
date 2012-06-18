@@ -10,6 +10,7 @@ class RbStatus < Sinatra::Base
       status.filter(:node => NODE_ID).delete
       before = status.filter(:node => NODE_ID).all.count.to_s
       status.insert(:data => Time.now, :node => NODE_ID)
+      sleep(1)
       after = status.filter(:node => NODE_ID).all.count.to_s
       if after > before
         "#{VHOST_NAME} OK"
